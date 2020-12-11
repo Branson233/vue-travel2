@@ -26,7 +26,7 @@
 </template>
    
 <script>
-  import BScroll from '@better-scroll/core'
+  import BetterScroll from 'better-scroll'
   export default {
     name: 'CitySearch',
     props: {
@@ -73,7 +73,10 @@
       }
     },
     mounted () {
-      this.scroll = new BScroll(this.$refs.search)
+      this.scroll = this.scroll = new BetterScroll(this.$refs.search, {
+              //开启点击事件 默认为false
+              click:true
+          })
     }
   }
 </script>

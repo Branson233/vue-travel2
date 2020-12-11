@@ -1,6 +1,6 @@
 <template>
-    <div class="list" ref="wrapper">
-      <div>  
+    <div  class="wrapper" ref="wrapper">
+      <div class="content">  
         <div class="area">
           <div class="title border-topbottom">当前城市</div>
           <div class="button-list">
@@ -44,9 +44,9 @@
       </div>
     </div>
   </template>
-  
+
 <script>
-  import BScroll from '@better-scroll/core'
+  import BetterScroll from 'better-scroll'
   export default {
     name: 'CityList',
     props: {
@@ -61,7 +61,15 @@
       }
     },
     mounted () {
-      this.scroll = new BScroll(this.$refs.wrapper,{ mouseWheel: true, click: true, tap: true })
+      if(!this.scroll){
+        this.scroll = new BetterScroll(this.$refs.wrapper, {
+              //开启点击事件 默认为false
+              click:true
+          })
+        }
+      else{
+          this.scroll.refresh()
+      }
     },
     watch:{
       letter () {
@@ -71,6 +79,7 @@
         }
       }
     }
+    
   }
 </script>
 
@@ -84,7 +93,7 @@
 .border-bottom
     &:before
       border-color: #ccc
-.list
+.wrapper
   overflow: hidden
   position: absolute
   top: 1.58rem
