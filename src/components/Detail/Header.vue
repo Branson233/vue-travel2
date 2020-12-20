@@ -2,7 +2,7 @@
     <div>
       <router-link
         tag="div"
-        to="/"
+        to="/home"
         class="header-abs"
         v-show="showAbs">
         <div class="iconfont header-abs-back">&#xe624;</div>
@@ -12,7 +12,7 @@
         v-show="!showAbs"
         :style="opacityStyle"
       >
-        <router-link to="/">
+        <router-link to="/home">
           <div class="iconfont header-fixed-back">&#xe624;</div>
         </router-link>
         景点详情
