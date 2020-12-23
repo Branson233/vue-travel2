@@ -55,7 +55,10 @@ export default {
           const data =res.data
           if(this.user.name in data) {
             if (this.user.password==data[this.user.name]){
+              this.restForm("user")
+              this.checked=false
               this.$router.push('/home')
+              this.$store.commit('setLogin', "true")
             }else{
               this.dialogVisible = true
               this.restForm("user")
@@ -79,12 +82,16 @@ export default {
     top:0
     right:0
     bottom:0
+    background-image: linear-gradient(to bottom , #7A88FF, #7AFFAF)
     display: flex
     justify-content:center
     align-items:center
     .login-form
       background-color:white
-      padding: 1rem;
+      padding: 1rem
+      border-radius: 10%
+      width: 5.25rem
+      height:5.25rem
       .form
         marigin: auto
         .login-button

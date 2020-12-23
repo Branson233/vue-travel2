@@ -26,6 +26,17 @@ Vue.use(VueAwesomeSwiper, /* { default options with global component } */)
 Vue.config.productionTip = false
 fastClick.attach(document.body)
 
+
+change()
+function change(){
+  var deviceWidth = document.documentElement.clientWidth
+  deviceWidth = deviceWidth < 320 ? 320 : deviceWidth > 640 ? 640 : deviceWidth
+  document.documentElement.style.fontSize = deviceWidth / 7.5 + 'px'
+}
+/* 监听窗口大小发生改变时*/
+window.addEventListener('resize',change,false)
+
+
 new Vue({
   router,
   store,

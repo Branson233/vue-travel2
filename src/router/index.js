@@ -4,6 +4,7 @@ import Home from '../views/Home.vue'
 import City from '../views/City.vue'
 import Detail from '../views/Detail.vue'
 import Login from '../views/Login.vue'
+import store from '../store/index'
 
 Vue.use(VueRouter)
 
@@ -33,6 +34,22 @@ const router = new VueRouter({
   routes,
   scrollBehavior (to, from, savedPosition) {
     return { x: 0, y: 0 }
+  }
+})
+
+
+
+//导航守卫
+//next:允许放行
+router.beforeEach((to, from, next) => {
+  if (to.path !== '/') {
+    if(store.state.isLogin=="true"){
+      next()
+    }else{
+      next('/')
+    }
+  }else{
+    next()
   }
 })
 

@@ -6,5 +6,8 @@ export default {
         } catch(e) {
           //
         }   
-      }
+      },
+    setLogin(state,flag){
+      state.isLogin=flag
+    }
 }
