@@ -33,6 +33,7 @@ export default {
 <style lang="stylus" scoped>
 @import '../../assets/styles/mixins.styl'
   .title
+    padding-top:.3rem
     margin-top:.2rem
     line-height:.8rem
     background: #eee

@@ -41,16 +41,19 @@ const router = new VueRouter({
 
 //导航守卫
 //next:允许放行
+
 router.beforeEach((to, from, next) => {
+  console.log(to)
   if (to.path !== '/') {
     if(store.state.isLogin=="true"){
       next()
     }else{
-      next('/')
+      next("/")
     }
   }else{
     next()
   }
 })
+
 
 export default router

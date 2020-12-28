@@ -57,8 +57,8 @@ export default {
             if (this.user.password==data[this.user.name]){
               this.restForm("user")
               this.checked=false
-              this.$router.push('/home')
               this.$store.commit('setLogin', "true")
+              this.$router.push('/home')
             }else{
               this.dialogVisible = true
               this.restForm("user")
