@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="title">周末去哪儿</div>
-    <ul>
+    <ul class="ul-container">
       <li
         class="item border-bottom"
         v-for="item of list"
@@ -34,20 +34,23 @@ export default {
     line-height: .8rem
     background: #eee
     text-indent: .2rem
-  .item-img-wrapper
-    overflow: hidden
-    height: 0
-    padding-bottom: 37.09%
-    .item-img
-      width: 100%
-  .item-info
-    padding: .1rem
-    .item-title
-      line-height: .54rem
-      font-size: .32rem
-      ellipsis()
-    .item-desc
-      line-height: .4rem
-      color: #ccc
-      ellipsis()
+  .item
+    margin-bottom:.2rem
+    .item-img-wrapper
+      overflow: hidden
+      height: 0
+      padding-bottom: 37.09%
+      .item-img
+        width: 100%
+    .item-info
+      padding: .1rem
+      .item-title
+        line-height: .54rem
+        font-size: .29rem
+        ellipsis()
+      .item-desc
+        line-height: .4rem
+        color: #ccc
+        ellipsis()
+
 </style>
