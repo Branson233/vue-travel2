@@ -59,7 +59,7 @@
         this.$store.commit('changeCity', city)
         this.$router.push('/home')
       }
-    },
+    }, 
     mounted () {
       if(!this.scroll){
         this.scroll = new BetterScroll(this.$refs.wrapper, {
