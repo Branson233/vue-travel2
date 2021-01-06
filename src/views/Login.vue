@@ -3,10 +3,10 @@
     <el-form ref="user" :model="user" class="login-form">
       <div class="form">
       <el-form-item  prop="name">
-        <el-input v-model="user.name" placeholder="请输入用户名"></el-input>
+        <el-input v-model="user.name" placeholder="请输入用户名:travel"></el-input>
       </el-form-item> 
       <el-form-item  prop="password">
-        <el-input v-model="user.password" placeholder="请输入密码"></el-input>
+        <el-input v-model="user.password" placeholder="请输入密码:000000"></el-input>
       </el-form-item> 
       <el-form-item prop="checked">
         <el-checkbox v-model="checked">我已阅读并同意用户协议和隐私条款</el-checkbox>
